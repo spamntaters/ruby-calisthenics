@@ -265,8 +265,7 @@ correct value for `foo_history` would be `[nil]`.
 `class_eval` can interpret a string on the fly to create some new code.
 In the example below, we define `add_method()` in the meta-class (and, through inheritance, available to any class). 
 When called, this method defines a new method that returns 42 (notice how `#{name}` gets replaced with the parameter passed to `add_method`).
-
-
+```
     class Class
       def add_method (name)
         class_eval %Q{
@@ -285,3 +284,4 @@ When called, this method defines a new method that returns 42 (notice how `#{nam
 
     mc = MyClass.new
     puts mc.my_method # => 42
+```
