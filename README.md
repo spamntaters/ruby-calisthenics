@@ -254,8 +254,7 @@ HINTS:
 
 * Don't forget that the very first time the attribute receives a value,
 its history array will have to be initialized.  
-* An
-attribute's initial value is always `nil` by default, so if
+* An attribute's initial value is always `nil` by default, so if
 `foo_history` is referenced before `foo` has ever been assigned, the
 correct answer is `nil`, but after the first assignment to `foo`, the
 correct value for `foo_history` would be `[nil]`.
@@ -266,7 +265,7 @@ correct value for `foo_history` would be `[nil]`.
 
 
     class Class
-      def add_method(name)
+      def add_method (name)
         class_eval %Q{
           def #{name}()
             42
