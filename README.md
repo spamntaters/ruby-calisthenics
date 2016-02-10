@@ -261,7 +261,10 @@ correct value for `foo_history` would be `[nil]`.
 * Don't forget that instance variables are referred to as `@bar` within getters and setters, as Section 3.4 of ELLS explains.
 * Although the existing `attr_accessor` can handle multiple arguments (e.g. `attr_accessor :foo, :bar`), your version just needs to handle a single argument.
 * Your implementation should be general enough to work in the context of any class and for attributes of any (legal) variable name.
-* Note that one powerful metaprogramming feature in Ruby is `class_eval` that can be called in the meta-class `Class`. `class_eval` can interpret a string on the fly to create some new code. In the example below, we define `add_method()` in the meta-class (and, through inheritance, available to any class). When called, this method defines a new method that returns 42 (notice how `#{name}` gets replaced with the parameter passed to `add_method`).
+* Note that one powerful metaprogramming feature in Ruby is `class_eval` that can be called in the meta-class `Class`. 
+`class_eval` can interpret a string on the fly to create some new code.
+In the example below, we define `add_method()` in the meta-class (and, through inheritance, available to any class). 
+When called, this method defines a new method that returns 42 (notice how `#{name}` gets replaced with the parameter passed to `add_method`).
 
 
     class Class
