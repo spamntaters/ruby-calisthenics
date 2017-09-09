@@ -15,10 +15,12 @@ module FunWithStrings
   return words
   end
   def anagram_groups
-    # your code here
+    anagrams = Array.new
+    words = self.split(" ")
+    anagrams = words.group_by { |word| word.downcase.chars.sort }.values
+    return anagrams
   end
 end
-
 # make all the above functions available as instance methods on Strings:
 
 class String
