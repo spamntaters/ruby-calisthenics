@@ -7,13 +7,11 @@ class CartesianProduct
     @sequences0 = sequences0
     @sequences1 = sequences1
   end
-  def cProd
-    hold = Array.new
-    for c0 in @sequences0 
-      for c1 in @sequences1
-        hold.push([c0, c1])
+  def each
+    @sequences0.each do |c0|
+      @sequences1.each do |c1|
+        yield [c0, c1]
       end
     end
-    return hold
   end
 end
